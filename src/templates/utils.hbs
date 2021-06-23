@@ -1,0 +1,10 @@
+/**
+ * @description create colums utils
+ */
+import moment from 'moment'
+/**
+ * @description 格式化日期
+ */
+export function formatTime(value: number | Date | string, formatType: string) {
+  return moment(value).format(formatType)
+}

@@ -1,0 +1,21 @@
+/**
+ * * notice this file create by sandfish
+ * * https://github.com/diveDylan/sandfish
+ * @description {{tableDescription}}
+ * @name {{tableName}}
+ */
+import { ColumnType } from 'antd/es/table'
+
+{{#each columns}}
+/**
+ * @description {{description}}
+ */
+export const {{name}}: ColumnType<{{type}}> = {
+  title: '{{title}}',
+  dataIndex: '{{name}}',
+  {{#if render}}
+  render: (text, record, index) =>
+    <span>{{render}}(text, {{formatType}})</span>
+  {{/if}}
+}
+{{/each}}

@@ -1,0 +1,13 @@
+/**
+ * * notice this file create by sandfish
+ * * https://github.com/diveDylan/sandfish
+ * * @description 系统权限枚举
+ */
+export enum Permission {
+  {{#each permissions}}
+  /**
+  * @description {{label}}
+  */
+  {{value}} = '{{code}}',
+  {{/each}}
+}

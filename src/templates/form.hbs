@@ -1,0 +1,21 @@
+/**
+ * * notice this file create by sandfish
+ * * https://github.com/diveDylan/sandfish
+ * @description {{tableDescription}}
+ * @name {{tableName}}
+ */
+
+interface FormConfig {
+  label: string
+  name: string
+}
+
+{{#each columns}}
+/**
+ * @description {{description}}
+ */
+export const {{name}}FormConfig: FormConfig = {
+  label: '{{title}}',
+  name: '{{name}}'
+}
+{{/each}}
