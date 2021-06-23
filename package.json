@@ -1,6 +1,6 @@
 {
   "name": "sandfish",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "create antd table columns and form items from db",
   "main": "dist/index.js",
   "typings": "build/main/index.d.ts",
@@ -21,6 +21,7 @@
     "fix:lint": "eslint src --ext .ts --fix",
     "test": "jest",
     "test:bin": "jest ./tests/index.spec.ts",
+    "publish": "npm publish",
     "cover": "jest --coverage",
     "codecov": "codecov --token=ed1c7988-3877-4e38-913f-56032105c5d7",
     "version": "standard-version",
