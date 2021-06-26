@@ -43,6 +43,15 @@ export async function checkFolder(folder: string) {
   }
   await fs.mkdirsSync(folder);
 }
+/**
+ * @description if folder is exist, if noexist mkdir a new folder
+ */
+export async function checkFolderWithoutRemove(folder: string) {
+  const isExists = await fs.pathExistsSync(folder);
+  if (!isExists) {
+    await fs.mkdirsSync(folder);
+  }
+}
 
 /**
  * @description write enums files

@@ -116,7 +116,7 @@ export async function queryAllTableColumnsSchema(
   return columns;
 }
 
-export interface Config extends ConnectionConfig {
+export interface Config {
   /**
    * @description 数据库的名字
    */
@@ -134,33 +134,34 @@ export interface Config extends ConnectionConfig {
    * @description 忽略的表名字
    */
   ignoreTableNames?: string | string[];
+  connectionConfig: ConnectionConfig
 }
+
 
 /**
  * @description run a mysql connection and query database
  */
 export async function generateColumns(config: Config) {
-  let connectionConfig: ConnectionConfig = {
-    host: config.host,
-    user: config.user,
-    password: config.password,
-    port: config.port,
-  };
-
+  const {
+    connectionConfig,
+    outputPath,
+    dataBaseNames,
+    needFormConfig,
+    ignoreTableNames
+  } = config
   let connection = await createConnection(connectionConfig);
   let connected = await connect(connection);
-  const folder = path.resolve(process.cwd(), config.outputPath);
+  const folder = path.resolve(process.cwd(), outputPath);
   if (!connected) return;
   await checkFolder(folder);
-
   await Promise.all(
-    config.dataBaseNames.map(async (databaseName) => {
+    dataBaseNames.map(async (databaseName) => {
       const databaseFolder =
         folder + '/' + underscoresToCamelCase(databaseName);
       await checkFolder(databaseFolder);
       await Promise.all([
         checkFolder(databaseFolder + '/columns'),
-        config.needFormConfig
+        needFormConfig
           ? checkFolder(databaseFolder + '/formConfigs')
           : Promise.resolve(),
       ]);
@@ -172,7 +173,7 @@ export async function generateColumns(config: Config) {
     let database = await findTablesSchema(
       connection,
       dataBaseName,
-      [].concat(config.ignoreTableNames)
+      [].concat(ignoreTableNames)
     );
     let tables = await queryAllTableColumnsSchema(
       connection,
@@ -186,7 +187,7 @@ export async function generateColumns(config: Config) {
       templates,
       underscoresToCamelCase(dataBaseName)
     );
-    if (config.needFormConfig) {
+    if (needFormConfig) {
       // TODO write formConfig
       await Promise.all(
         tables.map((table) =>
@@ -200,7 +201,6 @@ export async function generateColumns(config: Config) {
       );
     }
   }
-
   try {
     await Promise.all(
       config.dataBaseNames.map((dataBaseName) =>
