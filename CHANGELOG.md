@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.7](https://github.com/diveDylan/sandfish/compare/v0.0.5...v0.0.7) (2021-06-28)
+
+
+### Features
+
+* update config interface ([b7a7837](https://github.com/diveDylan/sandfish/commit/b7a78375247cd39bd5d71a32ffa8ec50c8867987))
+
 ### [0.0.5](https://github.com/diveDylan/sandfish/compare/v0.0.3...v0.0.5) (2021-06-23)
 
 ### 0.0.3 (2021-06-23)

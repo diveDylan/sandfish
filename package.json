@@ -1,6 +1,6 @@
 {
   "name": "sandfish",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "description": "create antd table columns and form items from db",
   "main": "dist/index.js",
   "typings": "build/main/index.d.ts",
