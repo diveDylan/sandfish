@@ -52,17 +52,23 @@ const getPlugins = () => {
 
 module.exports = {
   input: './src/index.ts',
-  output: {
-    file: './dist/index.js',
-    format: 'cjs',
-  },
+  output: [
+    {
+      file: './dist/index.js',
+      format: 'cjs',
+    },
+    {
+      file: './esm/index.js',
+      format: 'esm',
+    },
+  ],
   external: [
     'fs',
     'os',
     'util',
     'http',
     'https',
-    'handlebars/runtime',
+    // 'handlebars/runtime',
     'mysql',
     ...external,
   ],

@@ -4,7 +4,7 @@
   "description": "create antd table columns and form items from db",
   "main": "dist/index.js",
   "typings": "build/main/index.d.ts",
-  "module": "build/module/index.js",
+  "module": "esm/index.js",
   "repository": "https://github.com/diveDylan/sandfish",
   "license": "MIT",
   "keywords": [

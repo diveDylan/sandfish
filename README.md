@@ -18,6 +18,8 @@ yarn add sandfish
 
 > 我们认为用数字命名枚举是不合法且毫无可读性可言的行为，会使系统陷入迭代维护困境。插件会自动为你过滤用数字命名的枚举，
 
+> 如果提示 `Cannot find module 'mysql'`，请安装一下该依赖，因为这个库引用了 `readable-stream` 还有一个暂未关闭的[Circular dependencies](https://github.com/nodejs/readable-stream/issues/348#)，暂时没有将该包打包进去
+
 ```js
 const { generateEnums, generateColumns } = require('sandfish');
 const config = {
