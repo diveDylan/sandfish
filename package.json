@@ -12,7 +12,8 @@
     "template",
     "perimission",
     "table",
-    "antd"
+    "antd",
+    "dictionary"
   ],
   "scripts": {
     "build": "rollup --config --environment NODE_ENV:development",
