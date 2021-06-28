@@ -16,12 +16,16 @@ yarn add sandfish
 
 ### Usage
 
+> 我们认为用数字命名枚举是不合法且毫无可读性可言的行为，会使系统陷入迭代维护困境。插件会自动为你过滤用数字命名的枚举，
+
 ```js
 const { generateEnums, generateColumns } = require('sandfish');
 const config = {
-  host: 'localhost',
-  user: 'root',
-  password: '949440946',
+  connectionConfig: {
+    host: 'localhost',
+    user: 'root',
+    password: '949440946',
+  },
   dataBaseNames: ['DYLAN'], // 数据库名字
   outputPath: './tests/.output', // 输出目录
   ignoreTableNames: ['database_history'], // 不生成表格表单配置的黑名单

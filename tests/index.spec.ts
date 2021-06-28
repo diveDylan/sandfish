@@ -2,9 +2,11 @@ const { generateEnums, generateColumns } = require('../dist/index');
 const path = require('path');
 
 const config = {
-  host: 'localhost',
-  user: 'root',
-  password: '949440946',
+  connectionConfig: {
+    host: 'localhost',
+    user: 'root',
+    password: '949440946',
+  },
   dataBaseNames: ['DYLAN'],
   outputPath: './tests/.output',
   ignoreTableNames: ['database_history'],

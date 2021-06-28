@@ -17,15 +17,10 @@ test('generatorEnums will create an enums array', () => {
   expect(
     generatorEnums({
       enums: {
-        CheckPeriod: { YEAR: '年度考核', QUARTER: '季度考核' },
+        CheckPeriod: { 1: '年度考核', 2: '季度考核' },
       },
-      permissionKey: 'CheckPeriod',
-    }).permissions
-  ).toContainEqual({
-    label: '年度考核',
-    value: 'YEAR',
-    code: 'YEAR',
-  });
+    }).enumsArray
+  ).toHaveLength(0);
   expect(
     generatorEnums({
       enums: {

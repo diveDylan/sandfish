@@ -35,7 +35,7 @@ export interface Permission {
  * @description 数组格式下，格式化结构的函数
  * @params { enums } 单项枚举
  */
-export type Fomatter = (enums: Record<string, string>) => EnumsItem;
+export type Formatter = (enums: Record<string, string>) => EnumsItem;
 
 export function generatorEnums({
   enums,
@@ -43,7 +43,7 @@ export function generatorEnums({
   permissionKey,
 }: {
   enums: Enums;
-  formatter?: Fomatter;
+  formatter?: Formatter;
   /**
    * @description 权限字段的key
    */
@@ -58,13 +58,14 @@ export function generatorEnums({
   enumsKeys.forEach((enumsKey) => {
     /**
      * @notice 权限应该是[key,value]对象
+     * 我们会自动过滤数字命名的key
      */
     if (enumsKey === permissionKey) {
       permissions = Object.entries(enums[enumsKey]).map((enumsItem) => ({
         label: enumsItem[1],
         value: codeSplitTransfer(enumsItem[0]).toUpperCase(),
         code: enumsItem[0],
-      }));
+      })).filter(enumsItem => isNaN(Number(enumsItem.value)))
       return;
     }
     /**
@@ -79,7 +80,9 @@ export function generatorEnums({
       enumsArray.push({
         name: addEnumTail(enumsKey),
         // @ts-ignore
-        enums: enums[enumsKey].map((enumsItem) => formatterFn(enumsItem)),
+        enums: enums[enumsKey].map(
+          enumsItem => formatterFn(enumsItem)
+        ).filter(enumsItem => isNaN(Number(enumsItem[0]))),
       });
     } else {
       enumsArray.push({
@@ -87,12 +90,12 @@ export function generatorEnums({
         enums: Object.entries(enums[enumsKey]).map((enumsItem) => ({
           label: enumsItem[1],
           value: enumsItem[0].toUpperCase(),
-        })),
+        })).filter(enumsItem => isNaN(Number(enumsItem.value))),
       });
     }
   });
   return {
-    enumsArray,
+    enumsArray: enumsArray.filter(enumItem => enumItem.enums.length),
     permissions,
   };
 }
@@ -115,7 +118,7 @@ export function codeSplitTransfer(code: string) {
 interface GenerateEnums {
   enums: Enums;
   outputPath: string;
-  formatterFn?: Fomatter;
+  formatterFn?: Formatter;
   permissionKey?: string;
 }
 
