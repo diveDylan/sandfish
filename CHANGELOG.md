@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.10.1](https://github.com/diveDylan/sandfish/compare/v0.0.9...v0.10.1) (2021-06-29)
+
 ### [0.0.9](https://github.com/diveDylan/sandfish/compare/v0.0.7...v0.0.9) (2021-06-28)
 
 
