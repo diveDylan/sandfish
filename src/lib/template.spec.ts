@@ -5,7 +5,5 @@ describe('registerHandlebarTemplates', () => {
     const templates = registerHandlebarTemplates();
     expect(templates.column).toBeDefined();
     expect(templates.form).toBeDefined();
-    expect(templates.enums).toBeDefined();
-    expect(templates.permission).toBeDefined();
   });
 });

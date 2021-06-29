@@ -7,8 +7,8 @@ import fs from 'fs-extra';
 jest.mock('fs-extra', () => {
   return {
     _isEsModule: true,
-    writeFileSync: jest.fn(() => {}),
-    pathExistsSync: jest.fn().mockReturnValue(true),
+    writeFileSync: jest.fn(() => { }),
+    pathExistsSync: jest.fn().mockImplementation(val => val === '' ? false : true),
     removeSync: jest.fn(),
     mkdirsSync: jest.fn(),
   };
@@ -22,6 +22,7 @@ beforeAll(() => {
     enums: () => 'enums',
     permission: () => 'permission',
   };
+  jest.restoreAllMocks()
 });
 const table = {
   tableName: 'test',
@@ -63,12 +64,9 @@ test('checkout lib folder should exist', async () => {
   expect(fs.pathExistsSync).toReturnWith(true);
   expect(fs.removeSync).toBeCalledTimes(1);
 });
+test('checkout folder not exist', async () => {
+  await files.checkFolder('');
+  expect(fs.pathExistsSync).toReturnWith(false);
+  expect(fs.mkdirsSync).toBeCalled();
+});
 
-test('writeEnums should write file', async () => {
-  await files.writeEnums('../lib', [], templates);
-  expect(fs.writeFileSync).toBeCalled();
-});
-test('writePermissions should write files', async () => {
-  await files.writePermissions([], '../lib', templates);
-  expect(fs.writeFileSync).toBeCalled();
-});

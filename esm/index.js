@@ -1,6 +1,5 @@
 import * as mysql from 'mysql';
-import * as require$$1 from 'path';
-import require$$1__default from 'path';
+import require$$1 from 'path';
 import chalk from 'chalk';
 import ora from 'ora';
 import require$$0$2 from 'fs';
@@ -1077,7 +1076,7 @@ if (typeof fs.realpath.native === 'function') {
 }
 }(fs$k));
 
-const path$h = require$$1__default;
+const path$h = require$$1;
 
 // get drive on windows
 function getRootPath (p) {
@@ -1102,7 +1101,7 @@ var win32 = {
 };
 
 const fs$i = gracefulFs;
-const path$g = require$$1__default;
+const path$g = require$$1;
 const invalidWin32Path$1 = win32.invalidWin32Path;
 
 const o777$1 = parseInt('0777', 8);
@@ -1164,7 +1163,7 @@ function mkdirs$2 (p, opts, callback, made) {
 var mkdirs_1$1 = mkdirs$2;
 
 const fs$h = gracefulFs;
-const path$f = require$$1__default;
+const path$f = require$$1;
 const invalidWin32Path = win32.invalidWin32Path;
 
 const o777 = parseInt('0777', 8);
@@ -1232,7 +1231,7 @@ var mkdirs_1 = {
 
 const fs$g = gracefulFs;
 const os = require$$1$1;
-const path$e = require$$1__default;
+const path$e = require$$1;
 
 // HFS, ext{2,3}, FAT do not, Node.js v0.10 does not
 function hasMillisResSync () {
@@ -1309,7 +1308,7 @@ var utimes$1 = {
 };
 
 const fs$f = gracefulFs;
-const path$d = require$$1__default;
+const path$d = require$$1;
 
 const NODE_VERSION_MAJOR_WITH_BIGINT = 10;
 const NODE_VERSION_MINOR_WITH_BIGINT = 5;
@@ -1492,7 +1491,7 @@ var buffer = function (size) {
 };
 
 const fs$e = gracefulFs;
-const path$c = require$$1__default;
+const path$c = require$$1;
 const mkdirpSync$1 = mkdirs_1.mkdirsSync;
 const utimesSync = utimes$1.utimesMillisSync;
 const stat$3 = stat$4;
@@ -1671,7 +1670,7 @@ var pathExists_1 = {
 };
 
 const fs$c = gracefulFs;
-const path$b = require$$1__default;
+const path$b = require$$1;
 const mkdirp$1 = mkdirs_1.mkdirs;
 const pathExists$7 = pathExists_1.pathExists;
 const utimes = utimes$1.utimesMillis;
@@ -1887,7 +1886,7 @@ var copy$1 = {
 };
 
 const fs$b = gracefulFs;
-const path$a = require$$1__default;
+const path$a = require$$1;
 const assert = require$$5;
 
 const isWindows = (process.platform === 'win32');
@@ -2209,7 +2208,7 @@ var remove$2 = {
 
 const u$7 = universalify.fromCallback;
 const fs$a = gracefulFs;
-const path$9 = require$$1__default;
+const path$9 = require$$1;
 const mkdir$5 = mkdirs_1;
 const remove$1 = remove$2;
 
@@ -2255,7 +2254,7 @@ var empty = {
 };
 
 const u$6 = universalify.fromCallback;
-const path$8 = require$$1__default;
+const path$8 = require$$1;
 const fs$9 = gracefulFs;
 const mkdir$4 = mkdirs_1;
 const pathExists$6 = pathExists_1.pathExists;
@@ -2303,7 +2302,7 @@ var file$1 = {
 };
 
 const u$5 = universalify.fromCallback;
-const path$7 = require$$1__default;
+const path$7 = require$$1;
 const fs$8 = gracefulFs;
 const mkdir$3 = mkdirs_1;
 const pathExists$5 = pathExists_1.pathExists;
@@ -2362,7 +2361,7 @@ var link$1 = {
   createLinkSync
 };
 
-const path$6 = require$$1__default;
+const path$6 = require$$1;
 const fs$7 = gracefulFs;
 const pathExists$4 = pathExists_1.pathExists;
 
@@ -2491,7 +2490,7 @@ var symlinkType_1 = {
 };
 
 const u$4 = universalify.fromCallback;
-const path$5 = require$$1__default;
+const path$5 = require$$1;
 const fs$5 = gracefulFs;
 const _mkdirs = mkdirs_1;
 const mkdirs = _mkdirs.mkdirs;
@@ -2720,7 +2719,7 @@ var jsonfile = {
   writeJsonSync: jsonFile$3.writeFileSync
 };
 
-const path$4 = require$$1__default;
+const path$4 = require$$1;
 const mkdir$2 = mkdirs_1;
 const pathExists$2 = pathExists_1.pathExists;
 const jsonFile$2 = jsonfile;
@@ -2747,7 +2746,7 @@ function outputJson (file, data, options, callback) {
 var outputJson_1 = outputJson;
 
 const fs$4 = gracefulFs;
-const path$3 = require$$1__default;
+const path$3 = require$$1;
 const mkdir$1 = mkdirs_1;
 const jsonFile$1 = jsonfile;
 
@@ -2779,7 +2778,7 @@ jsonFile.readJSONSync = jsonFile.readJsonSync;
 var json = jsonFile;
 
 const fs$3 = gracefulFs;
-const path$2 = require$$1__default;
+const path$2 = require$$1;
 const copySync = copySync$1.copySync;
 const removeSync = remove$2.removeSync;
 const mkdirpSync = mkdirs_1.mkdirpSync;
@@ -2829,7 +2828,7 @@ var moveSync = {
 };
 
 const fs$2 = gracefulFs;
-const path$1 = require$$1__default;
+const path$1 = require$$1;
 const copy = copy$1.copy;
 const remove = remove$2.remove;
 const mkdirp = mkdirs_1.mkdirp;
@@ -2899,7 +2898,7 @@ var move = {
 
 const u = universalify.fromCallback;
 const fs$1 = gracefulFs;
-const path = require$$1__default;
+const path = require$$1;
 const mkdir = mkdirs_1;
 const pathExists = pathExists_1.pathExists;
 
@@ -2993,27 +2992,12 @@ async function checkFolder(folder) {
     await fs.mkdirsSync(folder);
 }
 /**
- * @description write enums files
- */
-async function writeEnums(folder, enums, templates) {
-    const enumsData = templates.enums({ enums });
-    await fs.writeFileSync(folder + '/enum.ts', enumsData);
-}
-/**
  * @description write form config
  */
 async function writeFormConfigs(form, outputPath, templates, dataBaseName) {
     const formConfigs = templates.form(form);
     const fileName = outputPath + '/' + dataBaseName + '/formConfigs/' + form.tableName + '.ts';
     await fs.writeFileSync(fileName, formConfigs);
-}
-/**
- * @description write permissions
- */
-async function writePermissions(permissions, outputPath, templates) {
-    const permissionTemplate = templates.permission({ permissions });
-    const fileName = outputPath + '/permissions.ts';
-    await fs.writeFileSync(fileName, permissionTemplate);
 }
 
 var handlebars_runtime = {exports: {}};
@@ -4485,66 +4469,6 @@ var utils = {"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,
     return "/**\n * @description create colums utils\n */\nimport moment from 'moment'\n/**\n * @description 格式化日期\n */\nexport function formatTime(value: number | Date | string, formatType: string) {\n  return moment(value).format(formatType)\n}";
 },"useData":true};
 
-var enums = {"1":function(container,depth0,helpers,partials,data) {
-    var stack1, alias1=container.strict, alias2=container.lambda, lookupProperty = container.lookupProperty || function(parent, propertyName) {
-        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
-          return parent[propertyName];
-        }
-        return undefined
-    };
-
-  return "/**\n * @description "
-    + ((stack1 = alias2(alias1(depth0, "name", {"start":{"line":8,"column":18},"end":{"line":8,"column":22}} ), depth0)) != null ? stack1 : "")
-    + "\n */\nexport enum "
-    + ((stack1 = alias2(alias1(depth0, "name", {"start":{"line":10,"column":14},"end":{"line":10,"column":18}} ), depth0)) != null ? stack1 : "")
-    + " {\n"
-    + ((stack1 = lookupProperty(helpers,"each").call(depth0 != null ? depth0 : (container.nullContext || {}),lookupProperty(depth0,"enums"),{"name":"each","hash":{},"fn":container.program(2, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":11,"column":2},"end":{"line":16,"column":11}}})) != null ? stack1 : "")
-    + "}\n";
-},"2":function(container,depth0,helpers,partials,data) {
-    var stack1, alias1=container.strict, alias2=container.lambda;
-
-  return "  /**\n  * @description "
-    + ((stack1 = alias2(alias1(depth0, "label", {"start":{"line":13,"column":19},"end":{"line":13,"column":24}} ), depth0)) != null ? stack1 : "")
-    + "\n  */\n  "
-    + ((stack1 = alias2(alias1(depth0, "value", {"start":{"line":15,"column":4},"end":{"line":15,"column":9}} ), depth0)) != null ? stack1 : "")
-    + " = '"
-    + ((stack1 = alias2(alias1(depth0, "value", {"start":{"line":15,"column":17},"end":{"line":15,"column":22}} ), depth0)) != null ? stack1 : "")
-    + "',\n";
-},"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
-    var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
-        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
-          return parent[propertyName];
-        }
-        return undefined
-    };
-
-  return "/**\n * * notice this file create by sandfish\n * * https://github.com/diveDylan/sandfish\n * @description 系统字典枚举\n */\n"
-    + ((stack1 = lookupProperty(helpers,"each").call(depth0 != null ? depth0 : (container.nullContext || {}),lookupProperty(depth0,"enums"),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":6,"column":0},"end":{"line":18,"column":9}}})) != null ? stack1 : "");
-},"useData":true};
-
-var permission = {"1":function(container,depth0,helpers,partials,data) {
-    var stack1, alias1=container.strict, alias2=container.lambda;
-
-  return "  /**\n  * @description "
-    + ((stack1 = alias2(alias1(depth0, "label", {"start":{"line":9,"column":19},"end":{"line":9,"column":24}} ), depth0)) != null ? stack1 : "")
-    + "\n  */\n  "
-    + ((stack1 = alias2(alias1(depth0, "value", {"start":{"line":11,"column":4},"end":{"line":11,"column":9}} ), depth0)) != null ? stack1 : "")
-    + " = '"
-    + ((stack1 = alias2(alias1(depth0, "code", {"start":{"line":11,"column":17},"end":{"line":11,"column":21}} ), depth0)) != null ? stack1 : "")
-    + "',\n";
-},"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
-    var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
-        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
-          return parent[propertyName];
-        }
-        return undefined
-    };
-
-  return "/**\n * * notice this file create by sandfish\n * * https://github.com/diveDylan/sandfish\n * * @description 系统权限枚举\n */\nexport enum Permission {\n"
-    + ((stack1 = lookupProperty(helpers,"each").call(depth0 != null ? depth0 : (container.nullContext || {}),lookupProperty(depth0,"permissions"),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":7,"column":2},"end":{"line":12,"column":11}}})) != null ? stack1 : "")
-    + "}";
-},"useData":true};
-
 /**
  * Read all the Handlebar templates that we need and return on wrapper object
  * so we can easily access the templates in out generator / write functions.
@@ -4555,8 +4479,6 @@ function registerHandlebarTemplates() {
         form: runtime.template(form),
         column: runtime.template(column),
         utils: runtime.template(utils),
-        enums: runtime.template(enums),
-        permission: runtime.template(permission),
     };
     return templates;
 }
@@ -4647,7 +4569,7 @@ async function generateColumns(config) {
     const { connectionConfig, outputPath, dataBaseNames, needFormConfig, ignoreTableNames } = config;
     let connection = await createConnection(connectionConfig);
     let connected = await connect(connection);
-    const folder = require$$1__default.resolve(process.cwd(), outputPath);
+    const folder = require$$1.resolve(process.cwd(), outputPath);
     if (!connected)
         return;
     await checkFolder(folder);
@@ -4681,86 +4603,4 @@ async function generateColumns(config) {
     }
 }
 
-function generatorEnums({ enums, formatter, permissionKey, }) {
-    const enumsArray = [];
-    let permissions;
-    const enumsKeys = Object.keys(enums);
-    enumsKeys.forEach((enumsKey) => {
-        /**
-         * @notice 权限应该是[key,value]对象
-         * 我们会自动过滤数字命名的key
-         */
-        if (enumsKey === permissionKey) {
-            permissions = Object.entries(enums[enumsKey]).map((enumsItem) => ({
-                label: enumsItem[1],
-                value: codeSplitTransfer(enumsItem[0]).toUpperCase(),
-                code: enumsItem[0],
-            })).filter(enumsItem => isNaN(Number(enumsItem.value)));
-            return;
-        }
-        /**
-         * @notice sometime wo create enums as a array
-         */
-        if (Array.isArray(enums[enumsKey])) {
-            const formatterFn = formatter ||
-                function (enums) {
-                    return { label: enums.label, value: enums.value.toUpperCase() };
-                };
-            enumsArray.push({
-                name: addEnumTail(enumsKey),
-                // @ts-ignore
-                enums: enums[enumsKey].map(enumsItem => formatterFn(enumsItem)).filter(enumsItem => isNaN(Number(enumsItem[0]))),
-            });
-        }
-        else {
-            enumsArray.push({
-                name: addEnumTail(enumsKey),
-                enums: Object.entries(enums[enumsKey]).map((enumsItem) => ({
-                    label: enumsItem[1],
-                    value: enumsItem[0].toUpperCase(),
-                })).filter(enumsItem => isNaN(Number(enumsItem.value))),
-            });
-        }
-    });
-    return {
-        enumsArray: enumsArray.filter(enumItem => enumItem.enums.length),
-        permissions,
-    };
-}
-/**
- * @description add Enum string tail for name
- * @param name string
- * @returns string
- */
-function addEnumTail(name) {
-    return name.endsWith('Enum') ? name : name + 'Enum';
-}
-/**
- * @description 处理权限码中的分割标志: . - -> 变成下划线
- */
-function codeSplitTransfer(code) {
-    return code.replace(/(\:|\,|\.|\-|->)/g, '_');
-}
-/**
- * @description 自动化生成枚举
- * @param enums
- * @param outputPath
- */
-async function generateEnums({ enums, outputPath, formatterFn, permissionKey, }) {
-    const folder = require$$1.resolve(process.cwd(), outputPath);
-    await checkFolder(folder);
-    const { enumsArray, permissions } = generatorEnums({
-        enums,
-        formatter: formatterFn,
-        permissionKey,
-    });
-    const templates = registerHandlebarTemplates();
-    await Promise.all([
-        writeEnums(folder, enumsArray, templates),
-        permissions
-            ? writePermissions(permissions, folder, templates)
-            : Promise.resolve(),
-    ]);
-}
-
-export { addEnumTail, codeSplitTransfer, connect, createConnection, findColumnsSchema, findTablesSchema, generateColumns, generateEnums, generatorEnums, queryAllTableColumnsSchema };
+export { connect, createConnection, findColumnsSchema, findTablesSchema, generateColumns, queryAllTableColumnsSchema };

@@ -20,7 +20,6 @@ jest.mock('./files', () => {
   return {
     __esModule: true,
     writeTables: jest.fn().mockResolvedValue(),
-    writeEnums: jest.fn().mockResolvedValue(),
     checkFolder: jest.fn(),
   };
 });
@@ -31,7 +30,7 @@ jest.mock('mysql', () => {
       connect: jest.fn().mockImplementation((fn) => {
         fn();
       }),
-      end: () => {},
+      end: () => { },
       query: jest.fn().mockImplementation((sql, fn) => {
         fn(null, [
           {

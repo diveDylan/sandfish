@@ -1,7 +1,6 @@
 import fs from 'fs-extra';
 import { Templates } from './template';
 import * as TableTypes from '../types/table';
-import { Permission } from './enum';
 
 /**
  * @description write columns by table
@@ -54,14 +53,6 @@ export async function checkFolderWithoutRemove(folder: string) {
 }
 
 /**
- * @description write enums files
- */
-export async function writeEnums(folder, enums, templates) {
-  const enumsData = templates.enums({ enums });
-  await fs.writeFileSync(folder + '/enum.ts', enumsData);
-}
-
-/**
  * @description write form config
  */
 export async function writeFormConfigs(
@@ -75,15 +66,4 @@ export async function writeFormConfigs(
     outputPath + '/' + dataBaseName + '/formConfigs/' + form.tableName + '.ts';
   await fs.writeFileSync(fileName, formConfigs);
 }
-/**
- * @description write permissions
- */
-export async function writePermissions(
-  permissions: Permission[],
-  outputPath: string,
-  templates: Templates
-): Promise<void> {
-  const permissionTemplate = templates.permission({ permissions });
-  const fileName = outputPath + '/permissions.ts';
-  await fs.writeFileSync(fileName, permissionTemplate);
-}
+

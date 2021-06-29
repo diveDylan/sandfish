@@ -3,15 +3,11 @@ import * as Handlebars from 'handlebars/runtime';
 import form from '../templates/form.hbs';
 import column from '../templates/column.hbs';
 import utils from '../templates/utils.hbs';
-import enums from '../templates/enums.hbs';
-import permission from '../templates/permission.hbs';
 
 export interface Templates {
   form: Handlebars.TemplateDelegate;
   column: Handlebars.TemplateDelegate;
   utils: Handlebars.TemplateDelegate;
-  enums: Handlebars.TemplateDelegate;
-  permission: Handlebars.TemplateDelegate;
 }
 
 /**
@@ -24,8 +20,6 @@ export function registerHandlebarTemplates(): Templates {
     form: Handlebars.template(form),
     column: Handlebars.template(column),
     utils: Handlebars.template(utils),
-    enums: Handlebars.template(enums),
-    permission: Handlebars.template(permission),
   };
   return templates;
 }

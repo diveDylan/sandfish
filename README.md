@@ -2,6 +2,8 @@
 
 这是一个根据`mysql`数据库自动生成 antd 的表哥列配置、表单配置以及一个枚举自动化创建文件的脚本
 
+> 字典和权限脚本已经单独拆开: [enum-maker](https://github.com/diveDylan/enum-maker)
+
 <img src="https://img.shields.io/travis/com/diveDylan/sandfish?style=plastic"/>
 <img src="https://img.shields.io/codecov/c/github/diveDylan/sandfish?style=plastic"/>
 
@@ -21,7 +23,7 @@ yarn add sandfish
 > 如果提示 `Cannot find module 'mysql'`，请安装一下该依赖，因为这个库引用了 `readable-stream` 还有一个暂未关闭的[Circular dependencies](https://github.com/nodejs/readable-stream/issues/348#)，暂时没有将该包打包进去
 
 ```js
-const { generateEnums, generateColumns } = require('sandfish');
+const { generateColumns } = require('sandfish');
 const config = {
   connectionConfig: {
     host: 'localhost',
@@ -34,21 +36,6 @@ const config = {
   needFormConfig: true, // 是否需要生成表单配置， 默认关闭
 };
 generateColumns(config);
-generateEnums({
-  // 字典数据
-  enums: yourEnumsData,
-  outputPath: output,
-  // 格式化字典格式
-  formatterFn: (enumsItem) => {
-    // do something
-    return {
-      label: someLabel,
-      value: someValue,
-    };
-  },
-  // 权限
-  permissionKey: 'permissionKey'
-);
 ```
 
 ### Columns
@@ -91,34 +78,3 @@ export const usernameFormConfig: FormConfig = {
   name: 'username',
 };
 ```
-
-### Enum & Permission
-
-枚举（字典）这部分主要为了代码的可读性维护性，我们必须在前后端维护同一份数据，可能格式略有出入。每次接口更新前端也需要手动
-维护，为了解决这个痛点。我们增加了枚举模板的生成。
-枚举的定义，我们认为枚举应该符合如下结构
-
-```typescript
-// Object Type
-Record < string, string >
-    // SeasonEnum
-const SeasonEnum =   {
-      SPRING: '春天',
-      SUMMER: '夏天',
-      AUTUMN: '秋天',
-      WINTER: '冬天',
-    };
-
-// Array Type
-Record <string, string>[]
-const SeasonEnumArray = [
-  {
-    label: '春天',
-    value: 'SPRING'
-  }
-]
-
-```
-
-对于数组格式我们暴露了一个转换方法生成`{label, value}`的结构。
-因为业务接口不一致的问题，我们不提供对外获取枚举数据的请求方法，需要使用的时候提供枚举数据
