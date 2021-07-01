@@ -1,6 +1,6 @@
 # sandfish
 
-这是一个根据`mysql`数据库自动生成 antd 的表哥列配置、表单配置以及一个枚举自动化创建文件的脚本
+这是一个根据`mysql`数据库自动生成 antd 的表格列配置、表单配置以及一个枚举自动化创建文件的脚本
 
 > 字典和权限脚本已经单独拆开: [enum-maker](https://github.com/diveDylan/enum-maker)
 
